@@ -6,7 +6,7 @@ topology:
       kind: linux
       image: vrnetlab/vr-openwrt:23.05.4
       mgmt-ipv4: 172.20.20.12
-      mgmt_ipv6: 2001:172:20:20::12
+      mgmt-ipv6: 2001:172:20:20::12
       ports:
         - 8080:80
         - 8443:443
