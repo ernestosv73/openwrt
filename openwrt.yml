@@ -6,11 +6,11 @@ topology:
       kind: linux
       image: vrnetlab/vr-openwrt:23.05.3
       mgmt-ipv4: 172.20.20.12
-    #  mgmt-ipv6: 2001:172:20:20::12
+      mgmt-ipv6: 2001:172:20:20::12
       ports:
         - 8080:80
         - 8443:443
-        - 2222:22
+        
         
       env:
         USERNAME: root #(default)
