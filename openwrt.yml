@@ -5,13 +5,11 @@ topology:
     openwrt:
       kind: linux
       image: vrnetlab/vr-openwrt:23.05.3
-      mgmt-ipv4: 172.20.20.12
-      mgmt-ipv6: 2001:172:20:20::12
+      
       ports:
         - 8080:80
         - 8443:443
-        
-        
+                
       env:
         USERNAME: root #(default)
         PASSWORD: VR-netlab9 #(default is VR-netlab9)
@@ -20,12 +18,12 @@ topology:
       # - ip -6 route del default dev eth0
      # - ip -6 addr add 2001:db8:dc::10/64 dev eth2  
     
-   # SRV1:
-    #  kind: linux
-     # image: docker.io/esanchezv/ubuntu2204:latest
-    #  exec:
-     # - ip -6 route del default dev eth0
-     # - ip -6 addr add 2001:db8:dc::50/64 dev eth1     
+    SRV1:
+      kind: linux
+      image: docker.io/esanchezv/ubuntu2204:latest
+      exec:
+      - ip -6 route del default dev eth0
+      - ip -6 addr add 2001:db8:dc::50/64 dev eth1     
 
  # links:
-  #  - endpoints: ["SRV1:eth1", "openwrt:eth2"]    
+  #  - endpoints: ["SRV1:eth1", "openwrt:eth1"]    
