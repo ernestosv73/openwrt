@@ -16,7 +16,7 @@ topology:
         CONNECTION_MODE: tc #(default)
       exec:
       # - ip -6 route del default dev eth0
-       - ip addr add 192.168.3.1 dev eth3  
+      # - ip addr add 192.168.3.1 dev eth3  
     
     SRV1:
       kind: linux
