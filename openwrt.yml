@@ -23,8 +23,8 @@ topology:
       image: esanchezv/ubuntu2204:latest
       exec:
        - ip -6 route del default dev eth0
-       - ip addr add 10.0.0.10/24 dev eth1
+       - ip addr add 192.168.0.10/24 dev eth1
       
 
   links:
-    - endpoints: ["SRV1:eth1", "openwrt:br-lan"]    
+    - endpoints: ["SRV1:eth1", "openwrt:eth1"]    
