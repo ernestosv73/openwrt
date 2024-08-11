@@ -6,6 +6,9 @@ topology:
       kind: linux
       image: duqn/openwrt:latest
       mgmt-ipv4: 172.20.20.12
+      publish:
+        # tcp port 22 will be published and accessible to anyone
+        - tcp/22
      # ports:
      #   - 8080:80
      #   - 8443:443
