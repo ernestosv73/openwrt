@@ -5,21 +5,14 @@ topology:
     openwrt:
       kind: linux
       image: duqn/openwrt:latest
-      mgmt-ipv4: 172.20.20.12
+      
       publish:
         # tcp port 22 will be published and accessible to anyone
         - tcp/22
-     # ports:
-     #   - 8080:80
-     #   - 8443:443
-                
-     # env:
-     #   USERNAME: root #(default)
-     #   PASSWORD: VR-netlab9 #(default is VR-netlab9)
-     #   CONNECTION_MODE: tc #(default)
+     
      # exec:
       # - ip -6 route del default dev eth0
-     #  - ip addr add 192.168.0.20/255.255.255.0 dev eth3  
+     #  - ip addr add 192.168.0.20/255.255.255.0 dev eth2
     
     SRV1:
       kind: linux
