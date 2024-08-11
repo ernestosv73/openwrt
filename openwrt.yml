@@ -4,7 +4,7 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: openwrt/rootfs:latest
+      image: dockernewttt/openwrt:latest
       
      # ports:
      #   - 8080:80
