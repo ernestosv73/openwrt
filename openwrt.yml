@@ -5,7 +5,7 @@ topology:
     openwrt:
       kind: linux
       image: duqn/openwrt:latest
-      
+      mgmt-ipv4: 172.20.20.12
      # ports:
      #   - 8080:80
      #   - 8443:443
