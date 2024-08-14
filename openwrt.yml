@@ -21,4 +21,4 @@ topology:
       
 
   links:
-    - endpoints: ["SRV1:eth1", "openwrt:eth2"]    
+    - endpoints: ["PC1:eth1", "openwrt:eth2"]    
