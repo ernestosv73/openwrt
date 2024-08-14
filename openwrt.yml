@@ -4,7 +4,7 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: duqn/openwrt:Ev
+      image: shellspec/openwrt:latest
       
       publish:
         # tcp port 22 will be published and accessible to anyone
