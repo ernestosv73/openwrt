@@ -4,7 +4,7 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: duqn/openwrt:latest
+      image: vrnetlab/vr-openwrt:15.05
       
       publish:
         # tcp port 22 will be published and accessible to anyone
