@@ -14,11 +14,13 @@ topology:
     
     PC1:
       kind: linux
-      image: docker.io/wbitt/network-multitool:extra
-      exec:
-       - ip -6 route del default dev eth0
-       - ip addr add 192.168.10.10/24 dev eth1
-      
+      image: danehans/tayga:latest
+      #exec:
+      # - ip -6 route del default dev eth0
+      # - ip addr add 192.168.10.10/24 dev eth1
+      publish:
+        # tcp port 22 will be published and accessible to anyone
+        - tcp/22
 
   links:
     - endpoints: ["PC1:eth1", "openwrt:eth2"]    
