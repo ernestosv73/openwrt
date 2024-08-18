@@ -12,15 +12,19 @@ topology:
      
      
     
-    PC1:
+    openwrt2:
       kind: linux
-      image: danehans/tayga:latest
+      image: vrnetlab/vr-openwrt:21.02.1
       #exec:
       # - ip -6 route del default dev eth0
       # - ip addr add 192.168.10.10/24 dev eth1
-      publish:
-        # tcp port 22 will be published and accessible to anyone
-        - tcp/22
+      ports:
+        - 8080:80
+        - 8443:443
+      env:
+        USERNAME: root #(default)
+        PASSWORD: mypassword #(default is VR-netlab9)
+        CONNECTION_MODE: tc #(default)
 
   links:
-    - endpoints: ["PC1:eth1", "openwrt:eth2"]    
+    - endpoints: ["openwrt2:eth2", "openwrt:eth2"]    
