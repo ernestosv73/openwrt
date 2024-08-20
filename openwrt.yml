@@ -26,4 +26,4 @@ topology:
        - ip addr add 192.168.10.10/24 dev eth1
       
   links:
-    - endpoints: ["openwrt:1/1", "PC1:eth1"]    
+    - endpoints: ["openwrt:eth1", "PC1:eth1"]    
