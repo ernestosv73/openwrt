@@ -4,16 +4,6 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: duqn/openwrt:latest
-      
-      publish:
-        # tcp port 22 will be published and accessible to anyone
-        - tcp/22
-     
-     
-    
-    openwrt2:
-      kind: linux
       image: vrnetlab/vr-openwrt:23.05.3
       #exec:
       # - ip -6 route del default dev eth0
@@ -25,6 +15,15 @@ topology:
         USERNAME: root #(default)
         PASSWORD: mypassword #(default is VR-netlab9)
         CONNECTION_MODE: tc #(default)
-
+     
+     
+    
+    PC1:
+      kind: linux
+      image: wbitt/network-multitool:extra
+      exec:
+       - ip -6 route del default dev eth0
+       - ip addr add 192.168.10.10/24 dev eth1
+      
   links:
-    - endpoints: ["openwrt2:1/1/1", "openwrt:eth2"]    
+    - endpoints: ["openwrt:1/1/1", "PC1:eth1"]    
