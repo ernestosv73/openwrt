@@ -14,7 +14,7 @@ topology:
     
     openwrt2:
       kind: linux
-      image: vrnetlab/vr-openwrt:21.02.1
+      image: vrnetlab/vr-openwrt:23.05.3
       #exec:
       # - ip -6 route del default dev eth0
       # - ip addr add 192.168.10.10/24 dev eth1
@@ -27,4 +27,4 @@ topology:
         CONNECTION_MODE: tc #(default)
 
   links:
-    - endpoints: ["openwrt2:eth2", "openwrt:eth2"]    
+    - endpoints: ["openwrt2:1/1/1", "openwrt:eth2"]    
