@@ -16,8 +16,14 @@ topology:
        - ip -6 route del default dev eth0
        - ip addr add 192.168.10.10/24 dev eth1
  
-    
+    PC2:
+      kind: linux
+      image: wbitt/network-multitool:extra
+      exec:
+       - ip -6 route del default dev eth0
+       - ip addr add 10.0.0.10/24 dev eth1
       
   links:
-    - endpoints: ["openwrt:eth2", "PC1:eth1"]    
+    - endpoints: ["PC1", "openwrt:eth2"] 
+    - endpoints: ["openwrt:eth3", "PC2:eth1"]
     
