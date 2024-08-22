@@ -4,7 +4,7 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: oofnik/openwrt:latest
+      image: vrnetlab/vr-openwrt:23.05.3
       publish:
         # tcp port 22 will be published and accessible to anyone
         - tcp/22
@@ -24,6 +24,6 @@ topology:
        - ip addr add 10.0.0.10/24 dev eth1
       
   links:
-    - endpoints: ["PC1:eth1", "openwrt:eth2"] 
-    - endpoints: ["openwrt:eth3", "PC2:eth1"]
+    - endpoints: ["PC1:eth1", "openwrt:eth1"] 
+    - endpoints: ["openwrt:eth2", "PC2:eth1"]
     
