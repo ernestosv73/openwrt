@@ -5,9 +5,9 @@ topology:
     openwrt:
       kind: linux
       image: duqn/openwrt:latest
-      #publish:
+      publish:
         # tcp port 22 will be published and accessible to anyone
-       # - tcp/22
+        - tcp/22
              
     PC1:
       kind: linux
