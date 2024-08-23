@@ -19,6 +19,6 @@ topology:
     
       
   links:
-    - endpoints: ["openwrt:eth2", "PC1:eth1"] 
+    - endpoints: ["openwrt:eth4", "PC1:eth1"] 
     
     
