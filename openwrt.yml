@@ -4,7 +4,7 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: oofnik/openwrt:19.07.5-x86-64
+      image: oofnik/openwrt:19.07
       #publish:
         # tcp port 22 will be published and accessible to anyone
        # - tcp/22
@@ -15,10 +15,16 @@ topology:
       exec:
        - ip -6 route del default dev eth0
        - ip addr add 192.168.10.10/24 dev eth1
- 
+
+    PC2:
+      kind: linux
+      image: wbitt/network-multitool:extra
+      exec:
+       - ip -6 route del default dev eth0
+       - ip addr add 192.168.20.10/24 dev eth1
     
       
   links:
     - endpoints: ["openwrt:eth4", "PC1:eth1"] 
-    
+    - endpoints: ["openwrt:eth3", "PC2:eth1"]
     
