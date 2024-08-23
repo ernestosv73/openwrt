@@ -1,4 +1,4 @@
-name: openwrt
+name: openwrttopo
 
 topology:
   nodes:
