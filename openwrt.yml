@@ -4,10 +4,16 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: oofnik/openwrt:latest
-      #publish:
-        # tcp port 22 will be published and accessible to anyone
-       # - tcp/22
+      image: vrnetlab/vr-openwrt:23.05.3
+      mgmt-ipv4: 172.20.20.2
+      mgmt_ipv6: 2001:172:20:20::12
+      ports:
+        - 8080:80
+        - 8443:443
+      env:
+        USERNAME: root #(default)
+        PASSWORD: VR-netlab9 #(default is VR-netlab9)
+        CONNECTION_MODE: tc #(default)
              
     PC1:
       kind: linux
