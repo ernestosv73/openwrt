@@ -4,7 +4,7 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: duqn/openwrt:latest
+      image: danehans/tayga:latest
                    
     PC1:
       kind: linux
