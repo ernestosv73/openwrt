@@ -4,7 +4,7 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: danehans/tayga:latest
+      image: oofnik/openwrt:19.07.7-x86-64
                    
     PC1:
       kind: linux
