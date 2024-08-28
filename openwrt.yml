@@ -24,7 +24,7 @@ topology:
 
    
     ros:
-      kind: mikrotik_ros
+      kind: vr-ros
       image: vrnetlab/vr-routeros:6.47.9
       #startup-config: myconfig.txt
 
@@ -39,5 +39,5 @@ topology:
       
   links:
     - endpoints: ["openwrt:eth4", "PC1:eth1"] 
-    - endpoints: ["openwrt:eth3", "mikrotik_ros:ether2"]
+    - endpoints: ["openwrt:eth3", "ros:ether2"]
     
