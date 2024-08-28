@@ -4,7 +4,7 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: oofnik/openwrt:latest
+      image: offnik/openwrt:19.07
                    
     PC1:
       kind: linux
