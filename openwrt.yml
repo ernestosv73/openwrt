@@ -5,9 +5,6 @@ topology:
     openwrt:
       kind: linux
       image: vrnetlab/vr-openwrt:23.05.3
-      #exec:
-       #- net.ipv6.conf.all.disable_ipv6=0
-       #- net.ipv6.conf.all.forwarding=1
       ports:
         - 8080:80
         - 8443:443
@@ -21,22 +18,14 @@ topology:
       exec:
        - ip -6 route del default dev eth0
        - ip addr add 192.168.10.10/24 dev eth1
-
-   
+  
     ros:
       kind: vr-ros
       image: vrnetlab/vr-routeros:6.47.9
       #startup-config: myconfig.txt
 
     
-    #PC2:
-    #  kind: linux
-    #  image: wbitt/network-multitool:extra
-    #  exec:
-    #   - ip -6 route del default dev eth0
-    #   - ip -6 addr add 2001:db8:100::2/64 dev eth1
-    
-      
+          
   links:
     - endpoints: ["openwrt:eth4", "PC1:eth1"] 
     - endpoints: ["openwrt:eth3", "ros:ether2"]
