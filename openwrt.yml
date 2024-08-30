@@ -4,7 +4,7 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: vrnetlab/vr-openwrt:23.05.3
+      image: vrnetlab/vr-openwrt:18.06.2
       ports:
         - 8080:80
         - 8443:443
