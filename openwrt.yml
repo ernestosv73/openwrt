@@ -28,5 +28,5 @@ topology:
           
   links:
     - endpoints: ["openwrt:eth1", "PC1:eth1"] 
-    - endpoints: ["openwrt:eth3", "ros:ether2"]
+    - endpoints: ["openwrt:eth2", "ros:ether2"]
     
