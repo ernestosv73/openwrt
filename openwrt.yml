@@ -11,7 +11,12 @@ topology:
       env:
         USERNAME: root #(default)
         PASSWORD: mypassword #(default is VR-netlab9)
-        CONNECTION_MODE: tc #(default)            
+        CONNECTION_MODE: tc #(default) 
+      interfaces:
+        - eth1
+        - eth2
+        
+        
     PC1:
       kind: linux
       image: wbitt/network-multitool:extra
