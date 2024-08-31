@@ -21,7 +21,7 @@ topology:
        - ip -6 route del default dev eth0
        - ip addr add 10.0.1.10/24 dev eth1
 
-    PC1:
+    PC2:
       kind: linux
       image: wbitt/network-multitool:extra
       exec:
