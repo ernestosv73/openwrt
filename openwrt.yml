@@ -2,16 +2,16 @@ name: openwrttopo
 
 topology:
   nodes:
-    #openwrt:
-    #  kind: linux
-    #  image: vrnetlab/vr-openwrt:23.05.3
-    #  ports:
-    #    - 8080:80
-    #    - 8443:443
-    #  env:
-    #    USERNAME: root #(default)
-    #    PASSWORD: mypassword #(default is VR-netlab9)
-    #    CONNECTION_MODE: tc #(default) 
+    openwrt:
+      kind: linux
+      image: vrnetlab/vr-openwrt:23.05.3
+      ports:
+        - 8080:80
+        - 8443:443
+      env:
+        USERNAME: root #(default)
+        PASSWORD: mypassword #(default is VR-netlab9)
+        CONNECTION_MODE: tc #(default) 
              
         
     PC1:
@@ -21,9 +21,9 @@ topology:
        - ip -6 route del default dev eth0
        - ip addr add 10.0.1.10/24 dev eth1
 
-    ubuntu:
-      kind: generic_vm
-      image: vrnetlab/vr-ubuntu:jammy
+    #ubuntu:
+    #  kind: generic_vm
+    #  image: vrnetlab/vr-ubuntu:jammy
       
 
   
@@ -34,6 +34,6 @@ topology:
     
           
   links:
-    - endpoints: ["PC1:eth1", "ubuntu:eth1"] 
+    - endpoints: ["PC1:eth1", "openwrt:eth1"] 
    # - endpoints: ["PC2:eth1", "openwrt:eth2"]
     
