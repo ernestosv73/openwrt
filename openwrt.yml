@@ -2,9 +2,9 @@ name: openwrttopo
 
 topology:
   nodes:
-    openwrt:
+    tayga:
       kind: linux
-      image: oofnik/openwrt:latest
+      image: danehans/tayga:latest
       mgmt-ipv4: 172.20.20.12
       #mgmt_ipv6: 2001:172:20:20::12
       
@@ -30,6 +30,6 @@ topology:
     
           
   links:
-    - endpoints: ["PC1:eth1", "openwrt:eth1"] 
+    - endpoints: ["PC1:eth1", "tayga:eth1"] 
    # - endpoints: ["PC2:eth1", "openwrt:eth2"]
     
