@@ -4,17 +4,10 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: vrnetlab/vr-openwrt:22.03.5
+      image: oofnik/openwrt:latest
       mgmt-ipv4: 172.20.20.12
       #mgmt_ipv6: 2001:172:20:20::12
-      ports:
-        - 8080:80
-        - 8443:443
-      env:
-        USERNAME: root #(default)
-        PASSWORD: VR-netlab9 #(default is VR-netlab9)
-        CONNECTION_MODE: tc #(default) 
-        QEMU_CPU: kvm64
+      
              
         
     PC1:
