@@ -7,8 +7,11 @@ topology:
       image: danehans/tayga:latest
       mgmt-ipv4: 172.20.20.12
       #mgmt_ipv6: 2001:172:20:20::12
-      
-             
+      exec:
+       - ip -6 route del default dev eth0
+       - ip addr add 10.0.1.1/24 dev eth1
+       sysctl net.ipv6.conf.all.disable_ipv6=0
+       sysctl net.ipv6.conf.all.forwarding=1
         
     PC1:
       kind: linux
