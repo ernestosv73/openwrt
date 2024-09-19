@@ -6,9 +6,7 @@ topology:
       kind: linux
       image: vrnetlab/vr-openwrt:23.05.3 
       mgmt-ipv4: 172.20.20.12
-      exec:
-       - ip link add name br-lan1 type bridge
-       - ip link set br-lan1 up
+      
       ports:
         - 8080:80
         - 8443:443
@@ -22,12 +20,10 @@ topology:
       exec:
        - ip -6 route del default dev eth0
        - ip addr add 10.0.1.10/24 dev eth1
-    br-clab:
-      kind: bridge
-   
+       
     
           
   links:
-    - endpoints: ["openwrt:eth1", "br-clab:eth1"] 
-    - endpoints: ["PC1:eth1", "br-clab:eth2"]
+    - endpoints: ["openwrt:eth1", "PC1:eth1"] 
+    #- endpoints: ["PC1:eth1", "br-clab:eth2"]
     
