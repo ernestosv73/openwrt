@@ -4,20 +4,27 @@ topology:
   nodes:
     openwrt:
       kind: linux
-      image: openwrt:latest 
+      image: vrnetlab/vr-openwrt:23.05.3 
       mgmt-ipv4: 172.20.20.12
-        
+      ports:
+        - 8080:80
+        - 8443:443
+      env:
+        USERNAME: root #(default)
+        PASSWORD: VR-netlab9 #(default is VR-netlab9)
+        CONNECTION_MODE: tc #(default)  
     PC1:
       kind: linux
       image: wbitt/network-multitool:extra
       exec:
        - ip -6 route del default dev eth0
        - ip addr add 10.0.1.10/24 dev eth1
-
+    br-clab:
+      kind: bridge
    
     
           
   links:
-    - endpoints: ["PC1:eth1", "openwrt:eth1"] 
-   # - endpoints: ["PC2:eth1", "openwrt:eth2"]
+    - endpoints: ["openwrt:eth1", "br-clab:eth1"] 
+    - endpoints: ["PC1:eth1", "br-clab:eth2"]
     
